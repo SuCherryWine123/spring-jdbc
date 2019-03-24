@@ -12,30 +12,30 @@ public class Main {
 	public static void main(String[] args) {
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 		RideService rideservice = appContext.getBean("rideService", RideService.class);
-//		testCreateRide(rideservice);
-//		 testUpdateRide(rideservice);
-		 testDeleteRide(rideservice);
+		// testCreateRide(rideservice);
+		// testUpdateRide(rideservice);
+		testDeleteRide(rideservice);
 	}
 
 	private static void testCreateRide(RideService rideservice) {
 		Ride ride = new Ride();
-		ride.setName("David");
-		ride.setDuration(20);
+		ride.setName("Mike");
+		ride.setDuration(25);
 		rideservice.createRide(ride);
 		System.out.println("successfully inserted");
 	}
 
 	private static void testUpdateRide(RideService rideservice) {
 		Ride ride = new Ride();
-		ride.setName("Su Su");
-		ride.setId(1);
+		ride.setName("Grace");
+		ride.setId(8);
 		rideservice.updateRide(ride);
 		System.out.println("successfully updated");
 	}
 
 	private static void testDeleteRide(RideService rideservice) {
 		Ride ride = new Ride();
-		ride.setName("David");
+		ride.setName("Su Su");
 		rideservice.deleteRide(ride);
 		System.out.println("successfully deleted");
 	}
