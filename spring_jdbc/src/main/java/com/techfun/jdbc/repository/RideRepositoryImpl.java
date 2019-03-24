@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import org.springframework.stereotype.Repository;
+
 import com.techfun.jdbc.connectionhelper.ConnectionHelper;
 import com.techfun.jdbc.model.Ride;
 
+@Repository("rideRepository")
 public class RideRepositoryImpl implements RideRepository {
 
 	@Override
