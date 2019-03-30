@@ -23,7 +23,7 @@ public class RideRepositoryImpl implements RideRepository {
 	public void createRide(Ride ride) {
 		// TODO Auto-generated method stub
 		jdbcTemplate.update("insert into ride(name, duration) values (?,?)", ride.getName(), ride.getDuration());
-
+		System.out.println("Test Transaction");
 	}
 
 	@Override

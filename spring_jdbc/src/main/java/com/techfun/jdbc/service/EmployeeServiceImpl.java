@@ -6,12 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.techfun.jdbc.model.Employee;
+import com.techfun.jdbc.model.Ride;
 import com.techfun.jdbc.repository.EmployeeRepository;
+import com.techfun.jdbc.repository.RideRepository;
 
 @Service("employeeService")
 public class EmployeeServiceImpl implements EmployeeService{
 	@Autowired
 	private EmployeeRepository employeeRepository;
+	private RideRepository rideRepository;
 	
 	public void createEmployee(Employee employee) {
 		// TODO Auto-generated method stub
@@ -29,5 +32,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public List<Employee> selectEmployee() {
 		return employeeRepository.selectEmployee();
+	}
+	
+	public void insertEmployeeAndRide(Employee employee,Ride ride) {
+		employeeRepository.insertEmployeeAndRide(employee,ride);
 	}
 }

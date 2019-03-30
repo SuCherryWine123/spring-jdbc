@@ -5,7 +5,6 @@
 	<groupId>com.techFun</groupId>
 	<artifactId>spring_jdbc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
 	<build>
 		<plugins>
 			<plugin>

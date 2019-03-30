@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.techfun.jdbc.model.Employee;
 import com.techfun.jdbc.model.Ride;
+import com.techfun.jdbc.repository.EmployeeRepositoryImpl;
 import com.techfun.jdbc.repository.RideRepository;
 import com.techfun.jdbc.repository.RideRepositoryImpl;
 
@@ -15,6 +16,7 @@ public class RideServiceImpl implements RideService {
 
 	@Autowired
 	private RideRepositoryImpl rideRepository;
+	private EmployeeRepositoryImpl employeeRepository;
 
 	@Override
 	public void createRide(Ride ride) {
@@ -34,5 +36,12 @@ public class RideServiceImpl implements RideService {
 	public List<Ride> selectRide() {
 		// TODO Auto-generated method stub
 		return rideRepository.selectRide();
+	}
+
+	@Override
+	public void insertEmployeeAndRide(Employee employee, Ride ride) {
+		// TODO Auto-generated method stub
+		rideRepository.createRide(ride);
+		employeeRepository.createEmployee(employee);
 	}
 }

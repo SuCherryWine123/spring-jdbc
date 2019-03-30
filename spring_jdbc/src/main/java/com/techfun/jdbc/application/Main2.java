@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.techfun.jdbc.model.Employee;
+import com.techfun.jdbc.model.Ride;
 import com.techfun.jdbc.service.EmployeeService;
 import com.techfun.jdbc.service.RideService;
 
@@ -19,7 +20,8 @@ public class Main2 {
 //		testCreateEmployee(employeeservice);
 //		testUpdateEmployee(employeeservice);
 //		testDeleteEmployee(employeeservice);
-		testSelectEmployee(employeeservice);
+//		testSelectEmployee(employeeservice);
+		testCreateEmployeeAndRide(employeeservice);
 	}
 
 	private static void testCreateEmployee(EmployeeService employeeservice) {
@@ -59,5 +61,20 @@ public class Main2 {
 		}
 		System.out.println("successfully seleceted");
 	}
+	
+	private static void testCreateEmployeeAndRide(EmployeeService employeeservice) {
+		Employee employee = new Employee();
+		employee.setName("Mike1");
+		employee.setAge(20);
+		employee.setAddress("London");
+		
+		Ride ride = new Ride();
+		ride.setName("Mike");
+		ride.setDuration(25);
+		
+		employeeservice.insertEmployeeAndRide(employee, ride);
+		System.out.println("successfully inserted");
+	}
+
 
 }
