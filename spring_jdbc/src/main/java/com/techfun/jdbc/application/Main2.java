@@ -21,7 +21,9 @@ public class Main2 {
 //		testUpdateEmployee(employeeservice);
 //		testDeleteEmployee(employeeservice);
 //		testSelectEmployee(employeeservice);
-		testCreateEmployeeAndRide(employeeservice);
+//		testCreateEmployeeAndRide(employeeservice);
+//		count(employeeservice);
+		selectoneEmployee(employeeservice);
 	}
 
 	private static void testCreateEmployee(EmployeeService employeeservice) {
@@ -75,6 +77,20 @@ public class Main2 {
 		employeeservice.insertEmployeeAndRide(employee, ride);
 		System.out.println("successfully inserted");
 	}
-
+	
+	private static void count(EmployeeService employeeservice) {
+		Employee employee = new Employee();
+		int counting = employeeservice.countEmployee(employee);
+		System.out.println("counting table rows:" + counting);
+	}
+	
+	private static void selectoneEmployee(EmployeeService employeeservice) {
+		Employee employee = new Employee();
+		employee.setId(20);
+		Employee selectemp = employeeservice.select(employee);
+		System.out.println("select one employee Name: " + selectemp.getName());
+		System.out.println("select one employe Age: " + selectemp.getAge());
+		System.out.println("select one employe Address: " + selectemp.getAddress());
+	}
 
 }

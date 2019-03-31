@@ -16,11 +16,12 @@ public class Main {
 	public static void main(String[] args) {
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 		RideService rideservice = appContext.getBean("rideService", RideService.class);
-		 testCreateRide(rideservice);
+//		 testCreateRide(rideservice);
 		// testUpdateRide(rideservice);
 //		testDeleteRide(rideservice);
 //		testSelectRide(rideservice);
-		 
+//		testCountRide(rideservice);
+		selectoneRide(rideservice);
 	}
 
 	private static void testCreateRide(RideService rideservice) {
@@ -55,6 +56,21 @@ public class Main {
 			System.out.println("Ride Duration: " + rd.getDuration());
 		}
 		System.out.println("successfully seleceted");
+	}
+	
+	private static int testCountRide(RideService rideservice) {
+		Ride ride = new Ride();
+		int countRide = rideservice.count(ride);
+		System.out.println("counting table rows:" + countRide);
+		return countRide;
+	}
+	
+	private static void selectoneRide(RideService rideservice) {
+		Ride ride = new Ride();
+		ride.setId(20);
+		Ride selectride = rideservice.select(ride);
+		System.out.println("select one ride Name: " + selectride.getName());
+		System.out.println("select one ride Duration: " + selectride.getDuration());
 	}
 	
 }

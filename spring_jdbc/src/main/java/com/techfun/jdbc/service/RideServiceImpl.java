@@ -44,4 +44,15 @@ public class RideServiceImpl implements RideService {
 		rideRepository.createRide(ride);
 		employeeRepository.createEmployee(employee);
 	}
+
+	@Override
+	public int count(Ride ride) {
+		return rideRepository.count(ride);
+	}
+
+	@Override
+	public Ride select(Ride ride) {
+		// TODO Auto-generated method stub
+		return rideRepository.selectoneRide(4);
+	}
 }

@@ -48,4 +48,18 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 		
 		jdbcTemplate.update("insert into ride(name, duration) values (?,?)", ride.getName(), ride.getDuration());
 	}
+
+	@Override
+	public int countEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		String sql = "select count(*) from employee";
+		return jdbcTemplate.queryForObject(sql,Integer.class);
+	}
+
+	@Override
+	public Employee selectoneEmployee(int employeeId) {
+		// TODO Auto-generated method stub
+		Employee employees = jdbcTemplate.queryForObject("select * from employee where id=?",new EmployeeRowMapper(),employeeId );
+		return employees;
+	}
 }

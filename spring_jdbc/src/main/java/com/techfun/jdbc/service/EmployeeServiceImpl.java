@@ -37,4 +37,15 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public void insertEmployeeAndRide(Employee employee,Ride ride) {
 		employeeRepository.insertEmployeeAndRide(employee,ride);
 	}
+
+	@Override
+	public int countEmployee(Employee employee) {
+		return employeeRepository.countEmployee(employee);
+	}
+
+	@Override
+	public Employee select(Employee employee) {
+		// TODO Auto-generated method stub
+		return employeeRepository.selectoneEmployee(20);
+	}
 }

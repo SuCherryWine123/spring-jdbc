@@ -44,4 +44,18 @@ public class RideRepositoryImpl implements RideRepository {
 		return rides;
 	}
 
+	@Override
+	public int count(Ride ride) {
+		// TODO Auto-generated method stub
+		String sql = "select count(*) from ride";
+		return jdbcTemplate.queryForObject(sql,Integer.class);
+	}
+
+	@Override
+	public Ride selectoneRide(int rideId) {
+		// TODO Auto-generated method stub
+		Ride rides = jdbcTemplate.queryForObject("select * from ride where id=?",new RideRowMapper(),rideId);
+		return rides;
+	}
+
 }

@@ -11,4 +11,6 @@ public interface RideService {
 	void deleteRide(Ride ride);
 	List<Ride> selectRide();
 	void insertEmployeeAndRide(Employee employee,Ride ride);
+	int count(Ride ride);
+	Ride select(Ride ride);
 }
